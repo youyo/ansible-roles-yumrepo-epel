@@ -1,3 +1,13 @@
 ---
-- shell: amazon-linux-extras install epel
-- shell: yum-config-manager --enable epel
+- name: Check epel
+  shell: yum-config-manager epel | grep -q 'enabled = True'
+  changed_when: False
+  register: epel_status
+
+- name: Install epel
+  shell: amazon-linux-extras install epel
+  when: epel_status.rc != 0
+
+- name: Enabled epel
+  shell: yum-config-manager --enable epel
+  when: epel_status.rc != 0
