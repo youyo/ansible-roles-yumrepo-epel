@@ -2,12 +2,12 @@
 - import_tasks: amzn2.yml
   when:
     - ansible_distribution == "Amazon"
-    - ansible_distribution_version == "2"
+    - ansible_service_mgr == "systemd"
 
 - import_tasks: amzn.yml
   when:
     - ansible_distribution == "Amazon"
-    - ansible_distribution_version != "2"
+    - ansible_service_mgr == "upstart"
 
 - import_tasks: el7.yml
   when:
