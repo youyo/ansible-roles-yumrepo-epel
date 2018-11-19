@@ -6,7 +6,7 @@
   register: epel_status
 
 - name: Install epel
-  command: amazon-linux-extras install epel
+  command: amazon-linux-extras install epel -y
   when: epel_status.rc != 0
 
 - name: Enabled epel
