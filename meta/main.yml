@@ -1,6 +1,7 @@
 galaxy_info:
   role_name: yumrepo_epel
   author: youyo
+  company: heptagon inc.
   description: install epel-release
   license: MIT
   min_ansible_version: 2.4
