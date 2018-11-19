@@ -10,5 +10,5 @@
     state: present
 
 - name: Enabled epel
-  shell: yum-config-manager --enable epel
+  command: yum-config-manager --enable epel
   when: epel_status.rc != 0
