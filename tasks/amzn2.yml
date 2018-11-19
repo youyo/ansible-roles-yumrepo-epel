@@ -2,7 +2,7 @@
 - name: Check epel
   shell: yum-config-manager epel | grep -q 'enabled = True'
   changed_when: False
-  ignore_error: True
+  ignore_errors: True
   register: epel_status
 
 - name: Install epel
